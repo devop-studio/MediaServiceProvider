@@ -1,0 +1,22 @@
+{
+    "name": "development-x/media-service-provider",
+    "type": "library",
+    "description": "Media Service Provider for Silex Framework",
+    "keywords": ["media", "silex", "media provider"],
+    "homepage": "https://github.com/development-x/media-service-provider",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zlatko Hristov",
+            "email": "zlatko.2create@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Media\\": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    }
+}
