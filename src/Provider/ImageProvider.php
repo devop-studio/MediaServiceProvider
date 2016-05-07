@@ -36,7 +36,6 @@ class ImageProvider
     {
         $this->app = $app;
         $this->options = $options;
-        $this->provider = new \Media\Provider\ImageProvider();
         $this->entityManager = $this->app['orm.em'];
     }
 

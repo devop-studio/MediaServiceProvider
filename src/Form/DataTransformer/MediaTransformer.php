@@ -44,7 +44,7 @@ class MediaTransformer implements DataTransformerInterface
     {
         $this->app = $app;
         $this->options = $options;
-        $this->provider = new \Media\Provider\ImageProvider();
+        $this->provider = new \Media\Provider\ImageProvider($app);
         $this->entityManager = $this->app['orm.em'];
     }
 
