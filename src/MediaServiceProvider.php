@@ -22,7 +22,7 @@ class MediaServiceProvider implements ServiceProviderInterface
                 }));
 
         $app['twig'] = $app->share($app->extend('twig', function(\Twig_Environment $twig) {
-                    $twig->addExtension(new Twig\MediaExtension());
+                    $twig->addExtension(new Twig\MediaExtension($app));
                     return $twig;
                 }));
 
