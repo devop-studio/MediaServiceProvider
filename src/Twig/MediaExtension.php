@@ -5,6 +5,21 @@ namespace Media\Twig;
 class MediaExtension extends \Twig_Extension
 {
     
+	/**
+     *
+     * @var \Silex\Application
+     */
+    private $app;
+	
+	/**
+     * 
+     * @param \Silex\Application $app
+     */
+    public function __construct(\Silex\Application $app)
+    {
+        $this->app = $app;
+    }
+	
     public function getFunctions()
     {
         return array(
@@ -15,7 +30,7 @@ class MediaExtension extends \Twig_Extension
     public function media(\Media\Entity\Media $media)
     {
         $url = "uploads/" . intval($media->getId()/1000) . "/" . $media->getName();
-        $base = \App\Application::getInstance()->getSilexApplication()['request']->getBasePath();
+        $base = $this->app['request']->getBasePath();
         return sprintf("%s/%s", $base, $url);
     }
     
