@@ -14,6 +14,21 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 class MediaType extends AbstractType
 {
 
+    /**
+     *
+     * @var \Silex\Application
+     */
+    private $app;
+    
+    /**
+     * 
+     * @param \Silex\Application $app
+     */
+    public function __construct(\Silex\Application $app)
+    {
+        $this->app = $app;
+    }
+    
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
@@ -25,7 +40,7 @@ class MediaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $builder->addModelTransformer(new \Media\Form\DataTransformer\MediaTransformer($options));
+        $builder->addModelTransformer(new \Media\Form\DataTransformer\MediaTransformer($this->app, $options));
 
         $builder->add('binary', FileType::class, array(
             'required' => false,

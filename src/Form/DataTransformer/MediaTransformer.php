@@ -13,6 +13,12 @@ class MediaTransformer implements DataTransformerInterface
 
     /**
      *
+     * @var \Silex\Application 
+     */
+    private $app;
+    
+    /**
+     *
      * @var array
      */
     private $options;
@@ -31,13 +37,15 @@ class MediaTransformer implements DataTransformerInterface
 
     /**
      * 
+     * @param \Silex\Application $app
      * @param array $options
      */
-    public function __construct($options = array())
+    public function __construct(\Silex\Application $app, $options = array())
     {
+        $this->app = $app;
         $this->options = $options;
         $this->provider = new \Media\Provider\ImageProvider();
-        $this->entityManager = \App\Application::getInstance()->getEntityManager();
+        $this->entityManager = $this->app['orm.em'];
     }
 
     /**

@@ -16,8 +16,8 @@ class MediaServiceProvider implements ServiceProviderInterface
     public function register(Application $app)
     {
 
-        $app['form.types'] = $app->share($app->extend('form.types', function ($types) {
-                    $types[] = new Form\Type\MediaType();
+        $app['form.types'] = $app->share($app->extend('form.types', function ($types) use ($app) {
+                    $types[] = new Form\Type\MediaType($app);
                     return $types;
                 }));
 
