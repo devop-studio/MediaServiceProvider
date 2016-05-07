@@ -70,7 +70,9 @@ class ImageProvider
 
         if (!$media instanceof Media) {
             $media = new Media();
-        }
+        } else {
+			$media->setBinary(null);
+		}
 
         $meta = $this->getMetaData($file);
         $name = $this->guestName() . "." . $file->guessClientExtension();
@@ -90,8 +92,6 @@ class ImageProvider
         $this->entityManager->persist($media);
         $this->entityManager->flush();
         
-		$media->setBinary(null);
-		
         return $media;
     }
     
