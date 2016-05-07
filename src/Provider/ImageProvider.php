@@ -74,7 +74,7 @@ class ImageProvider
 
         $meta = $this->getMetaData($file);
         $name = $this->guestName() . "." . $file->guessClientExtension();
-        $directory = WEB . 'uploads' . DIRECTORY_SEPARATOR . (intval($media->getId() / 1000));
+        $directory = $this->app['upload.path'] . DIRECTORY_SEPARATOR . (intval($media->getId() / 1000));
         
         if (!is_dir($directory)) {
             mkdir($directory, 0777, true);
@@ -90,6 +90,8 @@ class ImageProvider
         $this->entityManager->persist($media);
         $this->entityManager->flush();
         
+		$media->setBinary(null);
+		
         return $media;
     }
     
