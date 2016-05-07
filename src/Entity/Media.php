@@ -10,15 +10,6 @@ namespace Media\Entity;
  */
 class Media
 {
-
-    /**
-     * @var integer
-     *
-     * @Column(name="id", type="integer")
-     * @Id
-     * @GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
     
     /**
      *
