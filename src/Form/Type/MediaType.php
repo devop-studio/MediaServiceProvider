@@ -33,7 +33,7 @@ class MediaType extends AbstractType
     {
         $resolver->setDefaults(array(
             'compound' => true,
-            'data_class' => '\Media\Entity\Media'
+            'data_class' => null
         ));
     }
 
