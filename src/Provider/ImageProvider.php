@@ -9,6 +9,12 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class ImageProvider
 {
 
+	/**
+     *
+     * @var \Silex\Application
+     */
+    private $app;
+	
     /**
      *
      * @var array
@@ -21,10 +27,17 @@ class ImageProvider
      */
     private $entityManager;
 
-    public function __construct($options = array())
+    /**
+     * 
+     * @param \Silex\Application $app
+     * @param array $options
+     */
+    public function __construct(\Silex\Application $app, $options = array())
     {
+        $this->app = $app;
         $this->options = $options;
-        $this->entityManager = \App\Application::getInstance()->getEntityManager();
+        $this->provider = new \Media\Provider\ImageProvider();
+        $this->entityManager = $this->app['orm.em'];
     }
 
     public function guestName()
