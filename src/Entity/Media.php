@@ -2,11 +2,13 @@
 
 namespace Media\Entity;
 
+use Doctrine\ORM\Mapping AS ORM;
+
 /**
  * 
- * @Entity
- * @HasLifecycleCallbacks
- * @Table(name="media_attachments")
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Table(name="media_attachments")
  */
 class Media
 {
@@ -15,7 +17,7 @@ class Media
      *
      * @var string
      * 
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      */
     protected $name;
     
@@ -29,7 +31,7 @@ class Media
      *
      * @var string
      * 
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      */
     protected $reference;
     
@@ -37,7 +39,7 @@ class Media
      *
      * @var array
      * 
-     * @Column(type="array")
+     * @ORM\Column(type="array")
      */
     protected $meta;
     
@@ -45,7 +47,7 @@ class Media
      *
      * @var boolean
      * 
-     * @Column(name="is_active", type="boolean", nullable=true)
+     * @ORM\Column(name="is_active", type="boolean", nullable=true)
      */
     protected $active = true;
     
@@ -53,7 +55,7 @@ class Media
      *
      * @var DateTime
      * 
-     * @Column(name="updated_at", type="datetime", nullable=true)
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     protected $updatedAt;
     
@@ -61,7 +63,7 @@ class Media
      *
      * @var DateTime
      * 
-     * @Column(name="created_at", type="datetime", nullable=true)
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     protected $createdAt;
 
@@ -98,7 +100,7 @@ class Media
     
     /**
      * 
-     * @PreUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {
@@ -107,7 +109,7 @@ class Media
     
     /**
      * 
-     * @PrePersist
+     * @ORM\PrePersist
      */
     public function prePersist()
     {
