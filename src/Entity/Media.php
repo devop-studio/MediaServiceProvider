@@ -47,7 +47,7 @@ class Media
      * 
      * @Column(name="is_active", type="boolean", nullable=true)
      */
-    protected $isActive = true;
+    protected $active = true;
     
     /**
      *
@@ -198,27 +198,27 @@ class Media
     }
 
     /**
-     * Set isActive
+     * Set active
      *
-     * @param boolean $isActive
+     * @param boolean $active
      *
      * @return Media
      */
-    public function setIsActive($isActive)
+    public function setActive($active)
     {
-        $this->isActive = $isActive;
+        $this->active = $active;
 
         return $this;
     }
 
     /**
-     * Get isActive
+     * Get active
      *
      * @return boolean
      */
-    public function getIsActive()
+    public function getActive()
     {
-        return $this->isActive;
+        return $this->active;
     }
 
     /**

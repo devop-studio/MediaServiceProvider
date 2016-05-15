@@ -19,12 +19,6 @@ class MediaTransformer implements DataTransformerInterface
     
     /**
      *
-     * @var array
-     */
-    private $options;
-    
-    /**
-     *
      * @var \Media\Provider\ImageProvider
      */
     private $provider;

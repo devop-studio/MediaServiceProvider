@@ -12,15 +12,15 @@ class MediaServiceProvider implements ServiceProviderInterface
     public function boot(Application $app)
     {
         
+        if (!$app->offsetExists('upload.path')) {
+            throw new InvalidConfigurationException;
+        }
+        
     }
 
     public function register(Application $app)
     {
 
-//        if (!$app->offsetExists('upload.path')) {
-//            throw new InvalidConfigurationException;
-//        }
-        
         if ($app->offsetExists('form.factory')) {
             $app['form.types'] = $app->share($app->extend('form.types', function ($types) use ($app) {
                         $types[] = new Form\Type\MediaType($app);
