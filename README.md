@@ -1,3 +1,9 @@
+| SensioLabs Insight | Travis CI | Scrutinizer CI|
+| ------------------------|-------------|-----------------|
+|[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f6e15c47-013b-4c08-a301-683859b94b58/mini.png)](https://insight.sensiolabs.com/projects/f6e15c47-013b-4c08-a301-683859b94b58)|[![Build Status](https://travis-ci.org/development-x/PaginationServiceProvider.svg?branch=master)](https://travis-ci.org/development-x/PaginationServiceProvider)|[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/badges/build.png?b=master)](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/build-status/master)
+
+[![Dependency Status](https://www.versioneye.com/user/projects/5738e700a0ca35004cf78361/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5738e700a0ca35004cf78361) [![Latest Stable Version](https://poser.pugx.org/development-x/media-service-provider/v/stable)](https://packagist.org/packages/development-x/media-service-provider) [![Total Downloads](https://poser.pugx.org/development-x/media-service-provider/downloads)](https://packagist.org/packages/development-x/media-service-provider) [![Latest Unstable Version](https://poser.pugx.org/development-x/media-service-provider/v/unstable)](https://packagist.org/packages/development-x/media-service-provider) [![License](https://poser.pugx.org/development-x/media-service-provider/license)](https://packagist.org/packages/development-x/media-service-provider)
+
 Media Service Provider
 =============================
 

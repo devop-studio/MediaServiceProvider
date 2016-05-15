@@ -9,12 +9,12 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class ImageProvider
 {
 
-	/**
+    /**
      *
      * @var \Silex\Application
      */
     private $app;
-	
+
     /**
      *
      * @var array
@@ -70,14 +70,15 @@ class ImageProvider
 
         if (!$media instanceof Media) {
             $media = new Media();
-        } else {
-			$media->setBinary(null);
-		}
+        }
+        else {
+            $media->setBinary(null);
+        }
 
         $meta = $this->getMetaData($file);
         $name = $this->guestName() . "." . $file->guessClientExtension();
         $directory = $this->app['upload.path'] . DIRECTORY_SEPARATOR . (intval($media->getId() / 1000));
-        
+
         if (!is_dir($directory)) {
             mkdir($directory, 0777, true);
         }
@@ -88,28 +89,27 @@ class ImageProvider
         $media->setMeta($meta);
         $media->setIsActive(true);
         $media->setReference($file->getClientOriginalName());
-        
+
         $this->entityManager->persist($media);
         $this->entityManager->flush();
-        
+
         return $media;
     }
-    
+
     /**
      * 
      * @param Media $media
-     * @param boolean $keep
      * 
      * @return Media
      */
     public function remove(Media $media)
     {
-        
-        $directory = WEB . 'uploads' . DIRECTORY_SEPARATOR . (intval($media->getId() / 1000));
+
+        $directory = $this->app['upload_path'] . DIRECTORY_SEPARATOR . (intval($media->getId() / 1000));
         if (file_exists($directory . DIRECTORY_SEPARATOR . $media->getName())) {
             unlink($directory . DIRECTORY_SEPARATOR . $media->getName());
         }
-        
+
         return $media;
     }
 

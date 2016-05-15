@@ -18,6 +18,7 @@ class MediaExtension extends \Twig_Extension
     public function __construct(\Silex\Application $app)
     {
         $this->app = $app;
+        $this->app->register(new \Silex\Provider\FormServiceProvider());
     }
 	
     public function getFunctions()
