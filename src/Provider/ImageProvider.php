@@ -17,12 +17,6 @@ class ImageProvider
 
     /**
      *
-     * @var array
-     */
-    private $options;
-
-    /**
-     *
      * @var EntityManager
      */
     private $entityManager;
