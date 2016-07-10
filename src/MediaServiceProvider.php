@@ -2,11 +2,13 @@
 
 namespace Media;
 
+use Pimple\Container;
 use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\ServiceProviderInterface;
+use Silex\Api\BootableProviderInterface;
 use Media\Exception\InvalidConfigurationException;
 
-class MediaServiceProvider implements ServiceProviderInterface
+class MediaServiceProvider implements ServiceProviderInterface, BootableProviderInterface
 {
 
     public function boot(Application $app)
@@ -18,7 +20,7 @@ class MediaServiceProvider implements ServiceProviderInterface
         
     }
 
-    public function register(Application $app)
+    public function register(Container $app)
     {
 
         if ($app->offsetExists('form.factory')) {
