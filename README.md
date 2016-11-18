@@ -1,10 +1,10 @@
 | Sensiolab Insight | Travis-CI | Scrutinizer |
 | --- | --- | --- |
-| [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b2f1757d-acf4-4380-8e2f-d4b6567fbfde/mini.png)](https://insight.sensiolabs.com/projects/b2f1757d-acf4-4380-8e2f-d4b6567fbfde) | [![Build Status](https://travis-ci.org/development-x/MediaServiceProvider.svg?branch=master)](https://travis-ci.org/development-x/MediaServiceProvider) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/badges/build.png?b=master)](https://scrutinizer-ci.com/g/development-x/MediaServiceProvider/build-status/master) |
+| [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b2f1757d-acf4-4380-8e2f-d4b6567fbfde/mini.png)](https://insight.sensiolabs.com/projects/b2f1757d-acf4-4380-8e2f-d4b6567fbfde) | [![Build Status](https://travis-ci.org/development-x/media-service-provider.svg?branch=master)](https://travis-ci.org/development-x/media-service-provider) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/development-x/media-service-provider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/development-x/media-service-provider/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/development-x/media-service-provider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/development-x/media-service-provider/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/development-x/media-service-provider/badges/build.png?b=master)](https://scrutinizer-ci.com/g/development-x/media-service-provider/build-status/master) |
 
 | VersionEye | Packagist |
 | --- | --- |
-| [![Dependency Status](https://www.versioneye.com/user/projects/5810b8d58a555e001637e67e/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5810b8d58a555e001637e67e) | [![Packagist](https://img.shields.io/packagist/dt/development-x/MediaServiceProvider.svg)](https://github.com/development-x/MediaServiceProvider) [![Packagist](https://img.shields.io/packagist/l/development-x/MediaServiceProvider.svg)](https://github.com/development-x/MediaServiceProvider) [![Packagist Pre Release](https://img.shields.io/packagist/vpre/development-x/MediaServiceProvider.svg)](https://github.com/development-x/MediaServiceProvider) [![Packagist Pre Release](https://img.shields.io/hhvm/development-x/MediaServiceProvider.svg)](https://github.com/development-x/MediaServiceProvider) |
+| [![Dependency Status](https://www.versioneye.com/user/projects/5810b8d58a555e001637e67e/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5810b8d58a555e001637e67e) | [![Packagist](https://img.shields.io/packagist/dt/development-x/media-service-provider.svg)](https://github.com/development-x/media-service-provider) [![Packagist](https://img.shields.io/packagist/l/development-x/media-service-provider.svg)](https://github.com/development-x/media-service-provider) [![Packagist Pre Release](https://img.shields.io/packagist/vpre/development-x/media-service-provider.svg)](https://github.com/development-x/media-service-provider) [![Packagist Pre Release](https://img.shields.io/hhvm/development-x/media-service-provider.svg)](https://github.com/development-x/media-service-provider) |
 
 Media Service Provider
 =============================
@@ -40,7 +40,7 @@ composer require development-x/media-service-provider
 
 use Silex\Application;
 
-$app->register(new \Media\MediaServiceProvider())
+$app->register(new \Media\media-service-provider())
 
 ```
 
