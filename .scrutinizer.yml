@@ -1,4 +1,10 @@
-
+build:
+    environment:
+        php:
+            version: 5.5.25
+            ini:
+                'date.timezone': 'Europe/Sofia'
+                
 before_commands:
     - "composer install --prefer-source"
     
