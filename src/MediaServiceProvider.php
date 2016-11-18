@@ -23,7 +23,7 @@ class MediaServiceProvider implements ServiceProviderInterface, BootableProvider
     {
 
         if ($app->offsetExists('form.factory')) {
-            $app['form.types'] = $app->extend('form.types', function ($types) use ($app) {
+            $app['form.types'] = $app->extend('form.types', function($types) use ($app) {
                 $types[] = new Form\Type\MediaType($app);
                 return $types;
             });
