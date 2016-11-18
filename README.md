@@ -7,7 +7,7 @@
 Media Service Provider
 =============================
 
-Adding media service provider (inspired by [SonataMediaBundle](https://github.com/sonata-project/SonataMediaBundle)
+Adding media service provider (inspired by [SonataMediaBundle](https://github.com/sonata-project/SonataMediaBundle))
 
 
 Features
@@ -81,3 +81,11 @@ class Media extends BaseMedia
 }
 
 ```
+
+# ToDo
+- [ ] Add more functionality
+- [ ] Add more unit tests
+
+# Contributing
+However, if you are interested and want to send a bug fix, new functionality or better realization, just send a pull request :)
+travis

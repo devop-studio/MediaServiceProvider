@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping AS ORM;
  */
 class Media
 {
-    
+
     /**
      *
      * @var string
@@ -20,13 +20,13 @@ class Media
      * @ORM\Column(type="string")
      */
     protected $name;
-    
+
     /**
      *
      * @var \Symfony\Component\HttpFoundation\File\UploadedFile
      */
     protected $binary;
-    
+
     /**
      *
      * @var string
@@ -34,7 +34,7 @@ class Media
      * @ORM\Column(type="string")
      */
     protected $reference;
-    
+
     /**
      *
      * @var array
@@ -42,7 +42,7 @@ class Media
      * @ORM\Column(type="array")
      */
     protected $meta;
-    
+
     /**
      *
      * @var boolean
@@ -50,7 +50,7 @@ class Media
      * @ORM\Column(name="is_active", type="boolean", nullable=true)
      */
     protected $active = true;
-    
+
     /**
      *
      * @var DateTime
@@ -58,7 +58,7 @@ class Media
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     protected $updatedAt;
-    
+
     /**
      *
      * @var DateTime
@@ -73,9 +73,9 @@ class Media
      */
     public function __toString()
     {
-        return $this->getName() ? : "";
+        return $this->getName() ?: "";
     }
-    
+
     /**
      * 
      * @return \Symfony\Component\HttpFoundation\File\UploadedFile
@@ -84,7 +84,7 @@ class Media
     {
         return $this->binary;
     }
-    
+
     /**
      * 
      * @param \Symfony\Component\HttpFoundation\File\UploadedFile $binary
@@ -94,10 +94,10 @@ class Media
     public function setBinary($binary)
     {
         $this->binary = $binary;
-        
+
         return $this;
     }
-    
+
     /**
      * 
      * @ORM\PreUpdate
@@ -106,7 +106,7 @@ class Media
     {
         $this->updatedAt = new \DateTime();
     }
-    
+
     /**
      * 
      * @ORM\PrePersist
@@ -270,4 +270,5 @@ class Media
     {
         return $this->createdAt;
     }
+
 }

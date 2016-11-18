@@ -23,7 +23,6 @@
     "require-dev":{
         "silex/silex": "~2.0",
         "symfony/form": "~3.0",
-        "phpunit/phpunit": "~5.3",
         "symfony/security-csrf": "~3.0"
     },
     "extra": {

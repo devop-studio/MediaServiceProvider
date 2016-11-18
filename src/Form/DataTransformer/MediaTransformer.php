@@ -16,13 +16,13 @@ class MediaTransformer implements DataTransformerInterface
      * @var \Silex\Application 
      */
     private $app;
-    
+
     /**
      *
      * @var \Media\Provider\ImageProvider
      */
     private $provider;
-    
+
     /**
      *
      * @var EntityManager
@@ -46,7 +46,7 @@ class MediaTransformer implements DataTransformerInterface
      * 
      * @param Media|null $value
      * 
-     * @return integer
+     * @return Media|null
      */
     public function transform($value)
     {
@@ -65,20 +65,18 @@ class MediaTransformer implements DataTransformerInterface
     {
         if (null === $value) {
             return null;
-        }
-        else if ($value->getBinary()) {
+        } else if ($value->getBinary()) {
             return $this->provider->save($value->getBinary(), $value);
-        }
-        else if ($value->getId()) {
+        } else if ($value->getId()) {
             return $value;
         }
-        
+
         $media = $this->entityManager->getRepository('Media\Entity\Media')->find($value->getId());
-        
+
         if ($media instanceof Media) {
             return $media;
         }
-        
+
         throw new TransformationFailedException();
     }
 

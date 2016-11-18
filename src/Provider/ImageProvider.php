@@ -64,8 +64,7 @@ class ImageProvider
 
         if (!$media instanceof Media) {
             $media = new Media();
-        }
-        else {
+        } else {
             $media->setBinary(null);
         }
 
