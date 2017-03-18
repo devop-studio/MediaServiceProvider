@@ -17,7 +17,7 @@ class MediaTypeDataTransformer implements DataTransformerInterface
     
     /**
      *
-     * @var array
+     * @var array|null
      */
     private $options;
     

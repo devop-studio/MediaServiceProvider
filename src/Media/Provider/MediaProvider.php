@@ -14,7 +14,7 @@ class MediaProvider implements MediaProviderInterface
      *
      * @var EntityManager
      */
-    private $em;
+    private $entityManager;
 
     /**
      *
@@ -24,13 +24,13 @@ class MediaProvider implements MediaProviderInterface
 
     /**
      * 
-     * @param EntityManager $em
+     * @param EntityManager $entityManager
      * @param string $path
      */
-    public function __construct(EntityManager $em, $path)
+    public function __construct(EntityManager $entityManager, $path)
     {
-        $this->em = $em;
         $this->path = $path;
+        $this->entityManager = $entityManager;
     }
 
     /**
@@ -86,8 +86,8 @@ class MediaProvider implements MediaProviderInterface
             'extension' => $media->getFileContent()->getClientOriginalExtension()
         ]);
 
-        $this->em->persist($entity);
-        $this->em->flush();
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
 
         return $entity;
     }
