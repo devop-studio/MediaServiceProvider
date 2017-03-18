@@ -2,8 +2,6 @@
 
 namespace Media\Tests;
 
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-
 class MediaServiceProviderTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -16,20 +14,25 @@ class MediaServiceProviderTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->app = new \Silex\Application(array('debug' => true));
+        $this->app->register(new \Silex\Provider\TwigServiceProvider(), []);
+        $this->app->register(new \Silex\Provider\FormServiceProvider(), []);
     }
 
     public function testRegisterMediaServiceProviderWithInvalidConfiguration()
     {
         try {
             $this->app->register(new \Media\MediaServiceProvider());
-        } catch (\Media\Exception\InvalidConfigurationException $ex) {
-            $this->fail('upload.path missing from your application');
+        } catch (\RuntimeException $ex) {
+            $this->fail($ex->getMessage());
         }
     }
 
     public function testRegisterMediaServiceProvider()
     {
-        $this->app->register(new \Media\MediaServiceProvider(), ['upload.path' => __DIR__ . DIRECTORY_SEPARATOR . '..']);
+        $this->app->register(new \Media\MediaServiceProvider(), [
+            'media.entity' => \Media\Tests\Entity\Media::class,
+            'media.upload.path' => __DIR__ . DIRECTORY_SEPARATOR . '..']
+        );
         $this->assertTrue(true);
     }
 

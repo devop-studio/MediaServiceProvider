@@ -1,0 +1,12 @@
+{% block media_widget %}
+    {% if data is not empty %}
+        <div class="media_block">
+            <div class="img-thumbnail">
+                <img src="{{ media(data) }}" title="{{ data.metadata.filename }}" width="150px" />
+                {% if form.fileContentRemove is defined %}<div>{{ form_widget(form.fileContentRemove) }}</div>{% endif %}
+            </div>
+        </div>
+        <div class="clearfix">&nbsp;</div>
+    {% endif %}
+    {{ form_widget(form.fileContent) }} 
+{% endblock %}
