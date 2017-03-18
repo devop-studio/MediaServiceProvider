@@ -2,6 +2,8 @@
 
 namespace Media\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 class Media
 {
 
@@ -15,7 +17,7 @@ class Media
      *
      * @var string
      * 
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      */
     protected $context;
     
@@ -23,7 +25,7 @@ class Media
      *
      * @var string
      * 
-     * @Column(type="string", name="file_name")
+     * @ORM\Column(type="string", name="file_name")
      */
     protected $fileName;
 
@@ -31,7 +33,7 @@ class Media
      *
      * @var string
      * 
-     * @Column(type="string", name="file_type")
+     * @ORM\Column(type="string", name="file_type")
      */
     protected $fileType;
 
@@ -39,7 +41,7 @@ class Media
      *
      * @var int
      * 
-     * @Column(type="integer", name="file_size")
+     * @ORM\Column(type="integer", name="file_size")
      */
     protected $fileSize;
 
@@ -47,7 +49,7 @@ class Media
      *
      * @var array
      * 
-     * @Column(type="array", nullable=true)
+     * @ORM\Column(type="array", nullable=true)
      */
     protected $metadata;
     

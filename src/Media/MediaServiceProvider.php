@@ -43,7 +43,7 @@ class MediaServiceProvider implements BootableProviderInterface, ServiceProvider
             };
         }
 
-        $pimple->extend('twig', function($twig) use ($pimple) {
+        $pimple->extend('twig', function(\Twig_Environment $twig) use ($pimple) {
             $twig->addExtension(new \Media\Twig\MediaExtension($pimple['request_stack']));
             return $twig;
         });
